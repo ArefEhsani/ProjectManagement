@@ -1,0 +1,85 @@
+body {
+    background: linear-gradient(90deg, #003A60, #006fb1);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+h2 {
+    font-family: 'title';
+
+}
+
+.form-outline {
+    position: relative;
+}
+
+.form-outline input {
+    background-color: #0070b121 !important;
+    border: none;
+}
+
+.form-outline input:focus {
+    outline: 2px solid #006fb1;
+}
+
+.form-outline span {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 18px;
+    color: #777;
+    transition: .3s;
+}
+
+.form-outline input:focus~span {
+    top: -25px;
+    right: 10px;
+    font-size: 12px;
+}
+
+.form-outline input:valid~span {
+    top: -25px;
+    right: 10px;
+    font-size: 12px;
+}
+
+.btn-blue {
+    background: linear-gradient(90deg, #003A60, #006fb1);
+    color: #fff !important;
+    padding: 10px;
+}
+
+.btn-blue:hover {
+    background: linear-gradient(180deg, #003A60, #006fb1);
+    font-weight: bold;
+}
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.footer span {
+    font-size: 11px;
+}
+
+
+.container {
+    animation: move ease 1s;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

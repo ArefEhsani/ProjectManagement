@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'IRANSans';
+    src: url('../Font/IRANSans.ttf');
+}
+
+@font-face {
+    font-family: 'title';
+    src: url('../Font/title.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IRANSans';
+}
+
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+
+
+
+
+.section-sidebar {
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.dropdown-item {
+    width: 90%;
+    margin: auto;
+
+}
+
+.dropdown-item:hover {
+    background-color: #0070b121 !important;
+    border-radius: 5px;
+
+}
+
+.nav-item {
+    margin: 2px 0;
+}
+
+.nav-item a:hover {
+    background-color: #0070b121 !important;
+}
+
+.nav-item a.active {
+    background-color: #006fb1 !important;
+}
