@@ -130,3 +130,49 @@ body {
 span.small {
     font-size: 12px;
 }
+
+/* ----------------------------------------- */
+.list-group {
+    max-width: 460px;
+    margin: 4rem auto;
+}
+
+.list-group .small {
+    font-size: .7em;
+}
+
+.list-group-item-check:checked+.list-group-item {
+    color: #fff;
+    background-color: #006fb1;
+}
+
+.list-group-item-check:disabled+.list-group-item {
+    color: #888;
+    background-color: #59c8ff57;
+}
+
+.list-group-checkable .list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item-check {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.btn-blue {
+    background-color: #006fb1;
+    color: #fff;
+    transition: .3s;
+}
+
+.btn-blue:hover {
+    color: #fff;
+    background-color: #004872;
+}
+
+/* --------------------------------- */
+.form{
+    max-width: 460px;
+    margin: 4rem auto;
+}
