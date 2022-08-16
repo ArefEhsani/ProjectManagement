@@ -1,3 +1,4 @@
+/* باز و بسته کردن منوی همبرگری */
 function show() {
     const nodeList = document.querySelectorAll(".active-side");
 
