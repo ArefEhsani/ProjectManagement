@@ -26,6 +26,14 @@ body {
     overflow-x: hidden;
 }
 
+.text-primary {
+    color: #006fb1 !important;
+}
+
+.bg-primary {
+    background-color: #006fb1 !important;
+}
+
 /* دکمه منوی همبرگری */
 .btn-open.active-side {
     position: fixed;
@@ -258,15 +266,17 @@ span.small {
     padding: 15px 20px;
 }
 
-.btn-toggle[aria-expanded="true"]::before {
-    transform: rotate(-90deg);
+.btn-toggle::before {
+    content: '';
+    width: 10px;
+    aspect-ratio: 2 / 1;
+    background-image: conic-gradient(at top, transparent 0deg 135deg, white 135deg 225deg, transparent 225deg 360deg);
+    rotate: -90deg;
+    transition: transform .35s ease;
 }
 
-.btn-toggle::before {
-    width: 1.25em;
-    transition: transform .35s ease;
-    content: '>';
-
+.btn-toggle[aria-expanded="true"]::before {
+    transform: rotate(-90deg);
 }
 
 .collapse .card {
@@ -288,4 +298,21 @@ span.small {
 .collapse a {
     color: #000;
     text-decoration: none;
+}
+
+/* بخش دووم تکالیف صفحه ارسال تکلیف */
+table {}
+
+table tr:nth-child(odd) {
+    background-color: #0070b121;
+}
+
+table td:first-child {
+    border-radius: 0 8px 8px 0;
+    padding: 5px 10px;
+}
+
+table td:last-child {
+    border-radius: 8px 0 0 8px;
+    padding: 5px 10px;
 }
