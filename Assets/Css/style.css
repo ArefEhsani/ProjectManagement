@@ -366,3 +366,12 @@ span.small {
     text-decoration: none;
     color: #000;
 }
+
+
+
+/* صفحات ادمین */
+/* اضافه کردن استاد و دانشجو */
+.add {
+    max-width: 460px;
+    margin: 3rem auto;
+}
