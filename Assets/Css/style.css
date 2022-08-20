@@ -47,6 +47,7 @@ body {
     border-radius: 0 0 0 15px;
     font-size: 25px;
     transition: .5s;
+    z-index: 1;
 }
 
 /* لبه پایینی دکمه منوی همبرگری که شکل منحنی دارد */
@@ -117,7 +118,6 @@ body {
     .main {
         width: 100vw;
     }
-
 
 }
 
@@ -301,18 +301,68 @@ span.small {
 }
 
 /* بخش دووم تکالیف صفحه ارسال تکلیف */
-table {}
-
-table tr:nth-child(odd) {
+.descripiton-send tr:nth-child(odd) {
     background-color: #0070b121;
 }
 
-table td:first-child {
+.descripiton-send td:first-child {
     border-radius: 0 8px 8px 0;
     padding: 5px 10px;
 }
 
-table td:last-child {
+.descripiton-send td:last-child {
     border-radius: 8px 0 0 8px;
     padding: 5px 10px;
+}
+
+
+
+
+/* بحش استاد */
+/* صقحه لیست پروژه ها */
+.list-group a {
+    text-decoration: none;
+}
+
+/* صفحه لیست دانشجویان */
+.list-students {
+    max-width: 520px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+/* صفحه پروژه های پیشنهادی */
+.Suggestions {
+    overflow: auto;
+}
+
+.list-Suggestions {
+    min-width: 600px;
+}
+
+/* صفحه گزارشات و تکالیف   */
+.reports {
+    overflow: auto;
+}
+
+.list-reports {
+    min-width: 600px;
+    text-align: center;
+}
+
+.list-reports a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* صفحه گزارشات نهایی */
+.list-final-report {
+    max-width: 460px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.list-final-report a {
+    text-decoration: none;
+    color: #000;
 }

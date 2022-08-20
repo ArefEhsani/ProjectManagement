@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارشات و تکالیف</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous">
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- my style -->
+    <link rel="stylesheet" href="../Assets/Css/style.css">
+</head>
+
+<body>
+    <!-- دکمه منوی همبرگری -->
+    <i class="bi bi-list btn-open  bg-light active-side" onclick="show()"></i>
+    <!--  منوی همبرگری -->
+    <section class="d-flex flex-column flex-shrink-0 p-3 bg-light section-sidebar active-side">
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../Assets/Image/profile.png" alt="profile" width="32" height="32" class="rounded-circle me-2">
+                <strong>استاد</strong>
+            </a>
+            <ul class="dropdown-menu shadow">
+                <li><a class="dropdown-item" href="#">تنظیمات</a></li>
+                <li><a class="dropdown-item" href="#">پروفایل</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">خروج</a></li>
+            </ul>
+        </div>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="./Create project.html" class="nav-link link-dark">
+                    <i class="bi bi-folder-plus me-2"></i>
+                    ایجاد پروژه
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./List projects.html" class="nav-link link-dark">
+                    <i class="bi bi-card-checklist me-2"></i>
+                    لیست پروژه ها
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./List Students.html" class="nav-link link-dark">
+                    <i class="bi bi-person-fill  me-2"></i>
+                    لیست دانشجویان
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./List Suggestions.html" class="nav-link link-dark">
+                    <i class="bi bi-file-earmark-person-fill me-2"></i>
+                    پیشنهادات دانشجویان
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./List Reports.html" class="nav-link active">
+                    <i class="bi bi-file-earmark-fill"></i>
+                    گزارش ها و تکالیف ترم
+                </a>
+                <!-- تعریف امالیف -->
+            </li>
+            <li class="nav-item">
+                <a href="./Final Reports.html" class="nav-link link-dark">
+                    <i class="bi bi-file-earmark-check-fill me-2"></i>
+                    گزارشات نهایی
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./Archive.html" class="nav-link link-dark">
+                    <i class="bi bi-file-earmark-zip-fill me-2"></i>
+                    بایگانی
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <span class="text-muted small w-100 text-center">
+            Powered by Bootstrap
+        </span>
+    </section>
+
+    <!-- بخش اصلی صفحه -->
+    <section class="main active-side">
+        <div class="container reports">
+            <table class="table table-primary table-striped list-reports mx-1">
+                <!-- منو -->
+                <tr>
+                    <th>نام</th>
+                    <th>نام خانوادگی</th>
+                    <th> گزارش 1</th>
+                    <th> گزارش 2</th>
+                    <th> گزارش 3</th>
+                    <th> گزارش 4</th>
+                    <th> گزارش 5</th>
+                    <th> گزارش 6</th>
+                    <th> گزارش 7</th>
+                    <th> گزارش 8</th>
+                </tr>
+                <!-- بدنه و ایتم ها -->
+                <tr>
+                    <td>فاطمه</td>
+                    <td>عطایی</td>
+                    <td>
+                        <a href="./Reports.html"> نمایش </a>
+                    </td>
+                    <td>
+                        <a href="./Reports.html"> نمایش </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>حنانه</td>
+                    <td>بخشی</td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="./Reports.html"> نمایش </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>زهرا</td>
+                    <td>شکری</td>
+                    <td>
+                        <a href="./Reports.html"> نمایش </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="./Reports.html"> نمایش </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                    <td>
+                        <a href="#"> ارسال نشده </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+    <!-- my javascript -->
+    <script src="../Assets/Js/javascript.js"></script>
+</body>
+
+</html>
