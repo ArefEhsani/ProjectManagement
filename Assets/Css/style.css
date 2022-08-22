@@ -19,6 +19,29 @@
     font-family: 'IRANSans';
 }
 
+/* اسکرول بار کاستوم */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+}
+
+/* بک گراند اسکرول بار */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* بخشی که حرکت میکنه */
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+}
+
+/* وقتی هاور بشه */
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
 /* استایل بدنه اصلی */
 body {
     width: 100vw;
@@ -35,6 +58,10 @@ body {
 }
 
 /* دکمه منوی همبرگری */
+.btn-open {
+    cursor: pointer;
+}
+
 .btn-open.active-side {
     position: fixed;
     top: 0px;
@@ -73,6 +100,7 @@ body {
     position: fixed;
     right: 0px;
     transition: .5s;
+    z-index: 10;
 }
 
 /* بخشه اصلی پروژه شامل محتوا */
@@ -80,7 +108,6 @@ body {
     width: calc(100vw - 280px);
     padding: 50px 20px;
     margin-right: auto;
-    height: 2000px;
     transition: .5s;
 }
 
@@ -116,6 +143,10 @@ body {
     }
 
     .main {
+        width: 100vw;
+    }
+
+    .main.active-side {
         width: 100vw;
     }
 
@@ -282,10 +313,6 @@ span.small {
 .collapse .card {
     background-color: rgb(247, 243, 243);
     border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 2px;
     margin-bottom: 5px;
 }

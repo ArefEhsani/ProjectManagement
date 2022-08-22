@@ -17,7 +17,7 @@
 
 <body>
     <!-- دکمه منوی همبرگری -->
-    <i class="bi bi-list btn-open  bg-light active-side" onclick="show()"></i>
+    <i class="bi bi-list btn-open bg-light active-side" onclick="show()"></i>
     <!--  منوی همبرگری -->
     <section class="d-flex flex-column flex-shrink-0 p-3 bg-light section-sidebar active-side">
         <div class="dropdown">
@@ -95,6 +95,7 @@
 
     <!-- بخش اصلی صفحه -->
     <section class="main active-side">
+        <!-- جدول لیست گزارش ها -->
         <div class="container reports">
             <table class="table table-primary table-striped list-reports mx-1">
                 <!-- منو -->
@@ -197,6 +198,54 @@
                 </tr>
             </table>
         </div>
+
+        <!-- فرم باز و بسته کردن تکالیف -->
+        <form class="form">
+            <p class="small">فعال کردن و غیر فعال کردن گرازش های دانشجو.</p>
+            <div class="row">
+                <!-- گزارش های 1 تا 4 -->
+                <div class="col-md">
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" type="checkbox" id="goz1" checked>
+                        <label class="form-check-label" for="goz1"> گزارش 1 </label>
+                    </div>
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" type="checkbox" id="goz2" checked>
+                        <label class="form-check-label" for="goz2"> گزارش 2 </label>
+                    </div>
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" type="checkbox" id="goz3" checked>
+                        <label class="form-check-label" for="goz3"> گزارش 3 </label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="goz4" checked>
+                        <label class="form-check-label" for="goz4"> گزارش 4 </label>
+                    </div>
+                </div>
+                <!-- گزارش های 5 تا 8 -->
+                <div class="col-md">
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" type="checkbox" id="goz5" checked>
+                        <label class="form-check-label" for="goz5"> گزارش 5 </label>
+                    </div>
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" type="checkbox" id="goz6" checked>
+                        <label class="form-check-label" for="goz6"> گزارش 6 </label>
+                    </div>
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" type="checkbox" id="goz7" checked>
+                        <label class="form-check-label" for="goz7"> گزارش 7 </label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="goz8" checked>
+                        <label class="form-check-label" for="goz8"> گزارش 8 </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- دکمه ثبت -->
+            <button type="submit" class="btn btn-blue w-50 py-2 mb-1">ثبت</button>
+        </form>
     </section>
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
