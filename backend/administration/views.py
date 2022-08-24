@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404
 from accounts.models import CollegeUsers
 from django.urls import reverse
 from django.contrib.auth.models import User
+from .models import Project
 # Create your views here.
 
 
@@ -57,3 +58,11 @@ def delete_student(request, id):
     user = User.objects.get(id=student.user.id)
     user.delete()
     return redirect(reverse("students_list"))
+
+
+def projects_list(request):
+    context = {
+        'projects': Project.objects.filter(is_suggested=False),
+        'active_tab': 'projects_list',
+    }
+    return render(request, "administration/List projects.html", context)
