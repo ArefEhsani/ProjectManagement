@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیست پروژه ها</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous">
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- my style -->
+    <link rel="stylesheet" href="../Assets/Css/style.css">
+</head>
+
+<body>
+    <!-- دکمه منوی همبرگری -->
+    <i class="bi bi-list btn-open  bg-light active-side" onclick="show()"></i>
+    <!-- منو همبرگری -->
+    <section class="d-flex flex-column flex-shrink-0 p-3 bg-light section-sidebar active-side">
+        <!-- پروفایل -->
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../Assets/Image/profile.png" alt="profile" width="32" height="32" class="rounded-circle me-2">
+                <strong>ادمین</strong>
+            </a>
+            <ul class="dropdown-menu shadow">
+                <li><a class="dropdown-item" href="#">تنظیمات</a></li>
+                <li><a class="dropdown-item" href="#">پروفایل</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">خروج</a></li>
+            </ul>
+        </div>
+        <hr>
+        <!-- منو -->
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="./List Professor.html" class="nav-link link-dark">
+                    <i class="bi bi-person-video3 me-2"></i>
+                    لیست اساتید
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./List Students.html" class="nav-link link-dark">
+                    <i class="bi bi-person-fill  me-2"></i>
+                    لیست دانشجویان
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./List projects.html" class="nav-link active">
+                    <i class="bi bi-card-checklist me-2"></i>
+                    لیست پروژه ها
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./List Number.html" class="nav-link link-dark">
+                    <i class="bi bi-folder-fill me-2"></i>
+                    لیست نمره ها
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./List Reports.html" class="nav-link link-dark">
+                    <i class="bi bi-file-earmark-fill"></i>
+                    گزارش ها و تکالیف ترم
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./Final Reports.html" class="nav-link link-dark">
+                    <i class="bi bi-file-earmark-check-fill me-2"></i>
+                    گزارشات نهایی
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./Archive.html" class="nav-link link-dark">
+                    <i class="bi bi-file-earmark-zip-fill me-2"></i>
+                    بایگانی
+                </a>
+            </li>
+            <!-- پا صفحه -->
+        </ul>
+        <hr>
+        <span class="text-muted small w-100 text-center">
+            Powered by Bootstrap
+        </span>
+
+    </section>
+
+    <!-- بخش اصلی صفحه -->
+    <section class="main active-side">
+        <div class="list-group list-group-checkable  gap-2 w-auto">
+            <!-- ایتم های انتخاب پروژه -->
+            <div>
+                <label class="list-group-item rounded-3 py-3">
+                    <span> سامانه مدیریتی حضور غیاب</span>
+                    <div class="small opacity-50 d-flex justify-content-between">
+                        <span>تحت وب، دسکتاپ، موبایل</span>
+                        <span> <strong>2</strong> نفره </span>
+                    </div>
+                </label>
+            </div>
+            <div>
+                <label class="list-group-item rounded-3 py-3">
+                    <span> سامانه هوشمند آب و هوا </span>
+                    <div class="small opacity-50 d-flex justify-content-between">
+                        <span>تحت وب</span>
+                        <span> <strong>1</strong> نفره </span>
+                    </div>
+                </label>
+            </div>
+            <div>
+                <label class="list-group-item rounded-3 py-3">
+                    <span> سامانه مدیریتی آتش نشانی </span>
+                    <div class="small opacity-50 d-flex justify-content-between">
+                        <span>تحت وب، دسکتاپ، موبایل</span>
+                        <span> <strong>3</strong> نفره </span>
+                    </div>
+                </label>
+            </div>
+            <div>
+                <label class="list-group-item rounded-3 py-3">
+                    <span> وسایت فروشگاهی </span>
+                    <div class="small opacity-50 d-flex justify-content-between">
+                        <span>تحت وب</span>
+                        <span> <strong>1</strong> نفره </span>
+                    </div>
+                </label>
+            </div>
+            <div>
+                <label class="list-group-item rounded-3 py-3">
+                    <span> سایت با وردپرس </span>
+                    <div class="small opacity-50 d-flex justify-content-between">
+                        <span>تحت وب </span>
+                        <span> <strong>1</strong> نفره </span>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </section>
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+    <!-- my javascript -->
+    <script src="../Assets/Js/javascript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+<!-- دکمه منو همبرگری -->
+<i class="bi bi-list btn-open  bg-light active-side" onclick="show()"></i>
+<!-- منو همبرگری -->
+<section class="d-flex flex-column flex-shrink-0 p-3 bg-light section-sidebar active-side">
+    <!-- پروفایل -->
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{% static 'Image/profile.png' %}" alt="profile" width="32" height="32" class="rounded-circle me-2">
+            <strong>ادمین</strong>
+        </a>
+        <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" href="#">تنظیمات</a></li>
+            <li><a class="dropdown-item" href="#">پروفایل</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">خروج</a></li>
+        </ul>
+    </div>
+    <hr>
+    <!-- منو -->
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a href="{% url 'teachers_list' %}" class="nav-link {% if active_tab == 'teachers_list' %} active {% else %} link-dark {% endif %}">
+                <i class="bi bi-person-video3 me-2"></i>
+                لیست اساتید
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'students_list' %}" class="nav-link {% if active_tab == 'students_list' %} active {% else %} link-dark {% endif %}">
+                <i class="bi bi-person-fill  me-2"></i>
+                لیست دانشجویان
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="./List projects.html" class="nav-link link-dark">
+                <i class="bi bi-card-checklist me-2"></i>
+                لیست پروژه ها
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="./List Number.html" class="nav-link link-dark">
+                <i class="bi bi-folder-fill me-2"></i>
+                لیست نمره ها
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="./List Reports.html" class="nav-link link-dark">
+                <i class="bi bi-file-earmark-fill"></i>
+                گزارش ها و تکالیف ترم
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="./Final Reports.html" class="nav-link link-dark">
+                <i class="bi bi-file-earmark-check-fill me-2"></i>
+                گزارشات نهایی
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="./Archive.html" class="nav-link link-dark">
+                <i class="bi bi-file-earmark-zip-fill me-2"></i>
+                بایگانی
+            </a>
+        </li>
+        <!-- پا صفحه -->
+    </ul>
+    <hr>
+    <span class="text-muted small w-100 text-center">
+        Powered by Bootstrap
+    </span>
+
+</section>

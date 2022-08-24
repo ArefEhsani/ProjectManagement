@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'administration/includes/_header_referencese.html' %}
+    {% block header_ref %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    {% include 'administration/includes/sidenav.html' %}
+    {% block content %}{% endblock %}
+    {% include 'administration/includes/_footer_referencese.html' %}
+    {% block footer_ref %}{% endblock %}
+</body>
+
+</html>

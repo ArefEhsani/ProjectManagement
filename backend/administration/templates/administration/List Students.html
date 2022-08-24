@@ -1,0 +1,80 @@
+{% extends 'administration/includes/_layout.html' %}
+{% load static %}
+{% block title %}لیست دانشجوها{% endblock %}
+{% block content %}
+<!-- بخش اصلی صفحه -->
+<section class="main active-side">
+    <div class="add">
+        <!-- دکمه باز کردن مدال -->
+        برای اضافه کردن دانشجو جدید
+        <button type="button" class="btn btn-blue px-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            کلیک
+        </button>
+        کنید
+
+        <!-- مدال -->
+        <form method="post" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            {% csrf_token %}
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- سر صفحه -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">اضافه کردن</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!-- فرم اطلاعات دانشجو -->
+                    <div class="modal-body">
+                        <div class="mb-2">
+                            <label for="firstName" class="form-label"> نام </label>
+                            <input name="firstname" type="text" class="form-control" id="firstName">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="family" class="form-label"> نام خانوادگی </label>
+                            <input name="lastname" type="text" class="form-control" id="family">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="username" class="form-label"> نام کاربری </label>
+                            <input name="username" type="text" class="form-control" id="username">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="pass" class="form-label"> رمز عبور </label>
+                            <input name="password" type="password" class="form-control" id="pass">
+                        </div>
+                    </div>
+                    <!-- دکمه های مدال -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">لغو</button>
+                        <button type="submit" class="btn btn-blue">ذخیره</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- جدول لیست دانشجویان -->
+    <table class="table table-primary table-striped list-students">
+        <!-- منو -->
+        <tr>
+            <th>ردیف</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>عملیات</th>
+        </tr>
+        <!-- بدنه و ایتم ها -->
+        {% for student in students %}
+        <tr>
+            <th>{{ forloop.counter }}</th>
+            <td>{{ student.firstname }}</td>
+            <td>{{ student.lastname }}</td>
+            <td>
+                <a href="/administrators/students-list/delete/{{ student.id }}">
+                    <i class="bi bi-trash-fill text-danger"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}

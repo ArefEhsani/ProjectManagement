@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت پروژه های دانشجویی</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css" integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous">
+    <!-- my style and login style -->
+    <link rel="stylesheet" href="{% static 'Css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/style-login.css' %}">
+</head>
+
+<body>
+    <!-- فرم ورود -->
+    <div id="login" class="container bg-light mx-3 my-5 m-md-5 rounded-3 py-5">
+        <div class="logo text-center p-4  mb-4">
+            <h2>سامانه مدیریت پروژه های دانشجویی</h2>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-center flex-column-reverse flex-md-row">
+            <div class="col-11 col-md-4 d-flex flex-column align-items-center">
+                <h4>دانشگاه ....</h4>
+                <!-- فرم ورود -->
+                <form method="post" class="w-100">
+                    {% csrf_token %}
+                    {% if wrong_auth %}
+                    <p class="text-danger text-center">اطلاعات وارد شده صحیح نیست</p>
+                    {% endif %}
+                    <div class="form-outline w-100 mt-3">
+                        <i class="fas fa-user trailing"></i>
+                        <input name="username" type="text" class="form-control-lg rounded-pill w-100 shadow-sm" required>
+                        <span>نام کاربری</span>
+                    </div>
+                    <div class="form-outline w-100" style="margin-top: 32px;">
+                        <i class="fas fa-lock trailing"></i>
+                        <input name="password" type="password" class="form-control-lg rounded-pill w-100 shadow-sm" required>
+                        <span>رمز عبور</span>
+                    </div>
+                    <button type="submit" class="btn w-100 rounded-pill mt-4 btn-blue">ورود</button>
+                </form>
+                <!-- پا صفحه -->
+                <div class="footer mt-5">
+                    <span class="text-muted">Version 1.0</span>
+                    <span class="text-muted">Powered by Bootstrap</span>
+                </div>
+            </div>
+            <!-- تصویر -->
+            <div class="col-7 mb-5 mb-md-2 col-md-5">
+                <img src="{% static 'Image/project.svg' %}" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+/* استایل های کلی برای همه صفحات */
+@font-face {
+    font-family: 'IRANSans';
+    src: url('../Font/IRANSans.ttf');
+}
+
+@font-face {
+    font-family: 'title';
+    src: url('../Font/title.ttf');
+}
+
+/* ریست کردن اتظیمات */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IRANSans';
+}
+
+/* اسکرول بار کاستوم */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+}
+
+/* بک گراند اسکرول بار */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* بخشی که حرکت میکنه */
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+}
+
+/* وقتی هاور بشه */
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* استایل بدنه اصلی */
+body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.text-primary {
+    color: #006fb1 !important;
+}
+
+.bg-primary {
+    background-color: #006fb1 !important;
+}
+
+/* دکمه منوی همبرگری */
+.btn-open {
+    cursor: pointer;
+}
+
+.btn-open.active-side {
+    position: fixed;
+    top: 0px;
+    left: calc(100vw - 332px);
+    width: 54px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 0 15px;
+    font-size: 25px;
+    transition: .5s;
+    z-index: 1;
+}
+
+/* لبه پایینی دکمه منوی همبرگری که شکل منحنی دارد */
+.btn-open.active-side::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 0 6px 0 0;
+    box-shadow: 5px -5px 1px #f8f9fa;
+    position: fixed;
+    top: 40px;
+    right: 280px;
+    transition: .5s;
+}
+
+/* بخش منوی همبرگری */
+.section-sidebar.active-side {
+    width: 280px;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: fixed;
+    right: 0px;
+    transition: .5s;
+    z-index: 10;
+}
+
+/* بخشه اصلی پروژه شامل محتوا */
+.main.active-side {
+    width: calc(100vw - 280px);
+    padding: 50px 20px;
+    margin-right: auto;
+    transition: .5s;
+}
+
+/* استایل های مربوط به زمانی که منوی همبرگری بسته است */
+.btn-open.dis {
+    left: calc(100vw - 56px);
+}
+
+.btn-open.dis::after {
+    right: 0px;
+}
+
+.section-sidebar.dis {
+    right: -280px;
+}
+
+.main.dis {
+    width: 100vw;
+}
+
+@media screen and (max-width:768px) {
+
+    .btn-open {
+        left: calc(100vw - 52px);
+    }
+
+    .btn-open::after {
+        right: -280px;
+    }
+
+    .section-sidebar {
+        right: -280px;
+    }
+
+    .main {
+        width: 100vw;
+    }
+
+    .main.active-side {
+        width: 100vw;
+    }
+
+}
+
+/* بخش پروفایل کاربر */
+.dropdown-item {
+    width: 90%;
+    margin: auto;
+
+}
+
+.dropdown-item:hover {
+    background-color: #0070b121 !important;
+    border-radius: 5px;
+
+}
+
+/* ایتم های منوی همبرگری */
+.nav-item {
+    margin: 2px 0;
+}
+
+.nav-item a:hover {
+    background-color: #0070b121 !important;
+}
+
+.nav-item a.active {
+    background-color: #006fb1 !important;
+}
+
+span.small {
+    font-size: 12px;
+}
+
+/* بخش صفحه ی اخذ پروژه */
+.list-group {
+    max-width: 460px;
+    margin: 4rem auto;
+}
+
+.list-group .small {
+    font-size: .7em;
+}
+
+.list-group-item-check:checked+.list-group-item {
+    color: #fff;
+    background-color: #006fb1;
+}
+
+.list-group-item-check:disabled+.list-group-item {
+    color: rgb(112, 112, 112);
+    background-color: #00030a3a;
+    cursor: default;
+}
+
+.list-group-checkable .list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item-check {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.btn-blue {
+    background-color: #006fb1;
+    color: #fff;
+    transition: .3s;
+}
+
+.btn-blue:hover {
+    color: #fff;
+    background-color: #004872;
+}
+
+/* یک اندازه مشخص 460 پیکسلی برای استفاده محتوا */
+.form {
+    max-width: 460px;
+    margin: 4rem auto;
+}
+
+/* بخش آپلود کردن تکلیف نهایی */
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.file-drop-area.is-active {
+    background-color: #004872;
+    color: #fff;
+    border: none;
+    box-shadow: 0 0 8px gray;
+}
+
+.fake-btn {
+    background-color: #006fb1;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 15px;
+    margin-left: 10px;
+    font-size: small;
+}
+
+.file-msg {
+    font-size: small;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.file-input:focus {
+    outline: none;
+}
+
+.form ol li {
+    margin-bottom: 5px;
+    font-size: small;
+}
+
+.form ol li::marker {
+    color: #006fb1;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* بخش تکالیف و گزارش ها */
+.main .btn-toggle {
+    background-color: #006fb1;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.btn-toggle::before {
+    content: '';
+    width: 10px;
+    aspect-ratio: 2 / 1;
+    background-image: conic-gradient(at top, transparent 0deg 135deg, white 135deg 225deg, transparent 225deg 360deg);
+    rotate: -90deg;
+    transition: transform .35s ease;
+}
+
+.btn-toggle[aria-expanded="true"]::before {
+    transform: rotate(-90deg);
+}
+
+.collapse .card {
+    background-color: rgb(247, 243, 243);
+    border-radius: 8px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.collapse .card:hover {
+    background-color: rgb(216, 245, 179);
+    background-color: #0070b121 !important;
+}
+
+.collapse a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* بخش دووم تکالیف صفحه ارسال تکلیف */
+.descripiton-send tr:nth-child(odd) {
+    background-color: #0070b121;
+}
+
+.descripiton-send td:first-child {
+    border-radius: 0 8px 8px 0;
+    padding: 5px 10px;
+}
+
+.descripiton-send td:last-child {
+    border-radius: 8px 0 0 8px;
+    padding: 5px 10px;
+}
+
+
+
+
+/* بحش استاد */
+/* صقحه لیست پروژه ها */
+.list-group a {
+    text-decoration: none;
+}
+
+/* صفحه لیست دانشجویان */
+.list-students {
+    max-width: 520px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+/* صفحه پروژه های پیشنهادی */
+.Suggestions {
+    overflow: auto;
+}
+
+.list-Suggestions {
+    min-width: 600px;
+}
+
+/* صفحه گزارشات و تکالیف   */
+.reports {
+    overflow: auto;
+}
+
+.list-reports {
+    min-width: 600px;
+    text-align: center;
+}
+
+.list-reports a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* صفحه گزارشات نهایی */
+.list-final-report {
+    max-width: 460px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.list-final-report a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+/* صفحات ادمین */
+/* اضافه کردن استاد و دانشجو */
+.add {
+    max-width: 460px;
+    margin: 3rem auto;
+}

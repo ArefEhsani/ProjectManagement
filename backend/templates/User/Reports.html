@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> گزارشات </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous">
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- my style -->
+    <link rel="stylesheet" href="../Assets/Css/style.css">
+</head>
+
+<body>
+    <!-- دکمه منوی همبرگری -->
+    <i class="bi bi-list btn-open  bg-light active-side" onclick="show()"></i>
+    <!--  منوی همبرگری -->
+    <section class="d-flex flex-column flex-shrink-0 p-3 bg-light section-sidebar active-side">
+        <!-- پروفایل -->
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../Assets/Image/profile.png" alt="profile" width="32" height="32" class="rounded-circle me-2">
+                <strong>پروفایل</strong>
+            </a>
+            <ul class="dropdown-menu shadow">
+                <li><a class="dropdown-item" href="./Project Selection.html">اخذ پروژه</a></li>
+                <li><a class="dropdown-item" href="#">تنظیمات</a></li>
+                <li><a class="dropdown-item" href="#">پروفایل</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">خروج</a></li>
+            </ul>
+        </div>
+        <hr>
+        <!-- منو ها -->
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="./Project Selection.html" class="nav-link link-dark">
+                    <i class="bi bi-file-earmark-ppt-fill me-2"></i>
+                    اخذ پروژه
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./project proposal.html" class="nav-link link-dark">
+                    <i class="bi bi-sticky-fill me-2"></i>
+                    پیشنهاد موضوع پروژه
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./Report project.html" class="nav-link active">
+                    <i class="bi bi-pencil-fill me-2"></i>
+                    گزارش ها و تکالیف
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./Final project.html" class="nav-link link-dark">
+                    <i class="bi bi-pencil-square me-2"></i>
+                    گزارش نهایی
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <!-- پا صفحه -->
+        <span class="text-muted small w-100 text-center">
+            Powered by Bootstrap
+        </span>
+    </section>
+
+    <!-- بخش اصلی پروژه -->
+    <section class="main active-side">
+        <div class="form">
+            <!-- توضحات آپلود کردن -->
+            <h5 class="mb-3">ارسال گزارش <span class="text-primary">اول</span> پروژه</h5>
+            <p>
+                <p class="small bg-primary text-light p-1 rounded d-inline">مهلت : <span> 30 شهریور 1401 ساعت 12:00
+                    </span></p>
+                <br><br>
+                فایل تکالیف یا گزارش پروژه خود را بارگزاری کنید و ذخیره کنید.
+                <br>
+                <ol>
+                    <li>فایل پروژه تا این گزارش با فرمت zip یا rar</li>
+                    <li>قالب گزارش (pdf)</li>
+                </ol>
+                <span class="small text-muted">
+                    درصورتی که فایل پروژه شما بیش از 10MB است، فایل های خود را در جایی بارگزاری کنید و لینک دانلود آن
+                    را در
+                    بخش توضیحات ارسال کنید.
+                </span>
+            </p>
+            <!-- فرم آپلود فایل های نهایی پروژه -->
+            <form>
+                <!-- باکس آپلود -->
+                <div class="file-drop-area mb-3">
+                    <span class="fake-btn">انتخاب فایل ها</span>
+                    <span class="file-msg">یا کشیدن و رها کردن</span>
+                    <input class="file-input" type="file" multiple>
+                </div>
+                <!-- توضیحات -->
+                <div class="mb-3">
+                    <label for="PrpjectDiscripiton" class="form-label">توضیحات اختیاری</label>
+                    <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-blue w-25 py-2">ذخیره</button>
+                <a href="./Report project.html" class="btn btn-secondary w-25 py-2">لغو</a>
+            </form>
+            <!-- توضیحات ارسالی -->
+            <table class="descripiton-send w-100 mt-5">
+                <tr>
+                    <td>وضعیت تحویل</td>
+                    <td>خالی</td>
+                </tr>
+                <tr>
+                    <td>نمره</td>
+                    <td>خالی</td>
+                </tr>
+                <tr>
+                    <td>زمان تحویل</td>
+                    <td>خالی</td>
+                </tr>
+                <tr>
+                    <td>فایل ارسالی</td>
+                    <td>خالی</td>
+                </tr>
+                <tr>
+                    <td>توضیحات</td>
+                    <td>خالی</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+    <!-- jquery -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- uploading code js -->
+    <script src="../Assets/Js/uploading file.js"></script>
+    <!-- my js -->
+    <script src="../Assets/Js/javascript.js"></script>
+</body>
+
+</html>
