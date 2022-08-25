@@ -4,8 +4,10 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from administration.models import Project
 from accounts.models import CollegeUsers
-from .models import ProjectSetting
+from .models import ProjectSetting, ReportParts, ProjectReport, FinalReport
 from django.contrib.auth.models import User
+
+from teachers import models
 
 # Create your views here.
 
@@ -81,3 +83,63 @@ def confirm_suggestion(request, id):
     suggestion.is_suggested = False
     suggestion.save()
     return redirect(reverse("t_suggestions_list"))
+
+
+def reports_list(request):
+    activation = ReportParts.objects.filter(id=1)
+    if request.method == "POST":
+        report1 = False if not request.POST.get("report1") else True
+        report2 = False if not request.POST.get("report2") else True
+        report3 = False if not request.POST.get("report3") else True
+        report4 = False if not request.POST.get("report4") else True
+        report5 = False if not request.POST.get("report5") else True
+        report6 = False if not request.POST.get("report6") else True
+        report7 = False if not request.POST.get("report7") else True
+        report8 = False if not request.POST.get("report8") else True
+        if activation:
+            activation.update(report1=report1, report2=report2, report3=report3, report4=report4, report5=report5, report6=report6, report7=report7, report8=report8)
+        else:
+            ReportParts.objects.create(report1=report1, report2=report2, report3=report3, report4=report4, report5=report5, report6=report6, report7=report7, report8=report8)
+        return redirect(reverse("t_reports_list"))
+    context = {
+        'active_tab': 'reports_list',
+        'activation': activation.last(),
+        'reports': ProjectReport.objects.all(),
+    }
+    return render(request, 'teachers/List Reports.html', context)
+
+
+def report_detail(request, id):
+    report = get_object_or_404(ProjectReport, id=id)
+    if request.method == "POST":
+        mark = request.POST.get('mark')
+        report.mark = mark
+        report.save()
+        return redirect(reverse('t_reports_list'))
+    context = {
+        'report': report,
+    }
+    return render(request, 'teachers/Reports.html', context)
+
+
+def final_reports_list(request):
+    context = {
+        'final_reports': FinalReport.objects.filter(is_archive=False)
+    }
+    return render(request, 'teachers/Final Reports.html', context)
+
+
+def final_report_detail(request, id):
+    report = get_object_or_404(FinalReport, id=id)
+    if request.method == "POST":
+        mark = request.POST.get('mark')
+        description = request.POST.get('description')
+        report.mark = mark
+        report.description = description
+        report.is_archive = True
+        report.save()
+        return redirect(reverse('t_final_reports_list'))
+    context = {
+        'report': report,
+    }
+    return render(request, 'teachers/Final.html', context)

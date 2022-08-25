@@ -6,10 +6,10 @@
 <section class="main active-side">
     <div class="form">
         <!-- اطلاعات -->
-        <h5 class="mb-3">نام و نام خوانوادگی</h5>
+        <h5 class="mb-3">{{ report.student.firstname }} {{ report.student.lastname }}</h5>
         <p>
             <p class="small bg-primary text-light p-1 rounded d-inline">
-                گزارش اول
+                گزارش {{ report.number }}
             </p>
             <br><br>
             فایل ها
@@ -18,45 +18,26 @@
         </p>
         <!-- فایل ها -->
         <div class="file-drop-area mb-3">
-            <a href="#">نام و نام خوانوادگی</a>
+            {% if report.file %}
+            <a href="{{ report.file.url }}">{{ report.file }}</a>
+            {% else %}
+            <span>فایلی موجود نیست</span>
+            {% endif %}
         </div>
         <!-- توضیحات -->
         <div class="mb-3">
             <label for="PrpjectDiscripiton" class="form-label">توضیحات اختیاری</label>
-            <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4" placeholder="ندارد"></textarea>
+            <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4" disabled>{{ report.description }}</textarea>
         </div>
         <!-- فرم ثبت نمره -->
-        <form action="#">
+        <form method="post">
+            {% csrf_token %}
             <div class="mb-3">
                 <label for="PrpjectDiscripiton" class="form-label">نمره</label>
-                <input type="number" class="form-control w-25" placeholder="ندارد" min="0" max="20">
+                <input name="mark" type="number" class="form-control w-25" placeholder="ندارد" min="0" max="20" value="{{ report.mark }}">
             </div>
-
             <button type="submit" class="btn btn-blue w-25 py-2">ثبت نمره</button>
         </form>
-
-        <!-- توضیحات ارسالی -->
-        <table class="descripiton-send w-100 mt-5">
-            <tr>
-                <td>وضعیت تحویل</td>
-                <td>خالی</td>
-            </tr>
-            <tr>
-                <td>نمره</td>
-                <td>خالی</td>
-            </tr>
-            <tr>
-                <td>زمان تحویل</td>
-                <td>خالی</td>
-            </tr>
-            <tr>
-                <td>فایل ارسالی</td>
-                <td>خالی</td>
-            </tr>
-            <tr>
-                <td>توضیحات</td>
-                <td>خالی</td>
-            </tr>
         </table>
     </div>
 </section>
