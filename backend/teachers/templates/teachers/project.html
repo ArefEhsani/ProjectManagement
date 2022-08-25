@@ -1,0 +1,76 @@
+{% extends 'teachers/includes/_layout.html' %}
+{% load static %}
+{% block title %}پروژه{% endblock %}
+{% block content %}
+<!-- بخش اصلی -->
+<section class="main active-side">
+    <form class="form">
+        <!-- عنوان پروژه -->
+        <div class="mb-3">
+            <label for="PrpjectName" class="form-label">عنوان پروژه</label>
+            <input type="text" class="form-control" id="PrpjectName" placeholder="پروژه فلان">
+        </div>
+        <!-- انتخاب پلتفرم و تعداد نفرات گروه -->
+        <div class="d-flex flex-column flex-md-row justify-content-center mb-3">
+            <!-- پلتفرم -->
+            <div class="list-group m-1 w-auto">
+                <!-- web -->
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input" type="checkbox" value="" checked>
+                    <span>
+                        تحت وب
+                        <span class="d-block text-muted small">سایت ها و وبسایت هایی که از طریق اینترنت قایل دسترسی
+                            هستند</span>
+                    </span>
+                </label>
+                <!-- desktop -->
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input" type="checkbox" value="">
+                    <span>
+                        دسکتاپ
+                        <span class="d-block text-muted small">نرم افزار های ویندوزی برای لپ تاپ و کامپیوتر</span>
+                    </span>
+                </label>
+                <!-- mobile -->
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input" type="checkbox" value="" checked>
+                    <span>
+                        موبایل
+                        <span class="d-block text-muted small">اپیکیشن اندروید برای گوشی های موبایل</span>
+                    </span>
+                </label>
+            </div>
+            <!-- تعداد گروه -->
+            <div class="list-group m-0 mt-1  w-auto">
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input" type="radio" name="Radios" id="radios1" value="1">
+                    <span>
+                        1 نفر
+                    </span>
+                </label>
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input" type="radio" name="Radios" id="radios2" value="2" checked>
+                    <span>
+                        2 نفر
+                    </span>
+                </label>
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input" type="radio" name="Radios" id="radios3" value="3">
+                    <span>
+                        3 نفر
+                    </span>
+                </label>
+            </div>
+        </div>
+        <!-- توضیحات پروژه -->
+        <div class="mb-3">
+            <label for="PrpjectName" class="form-label">توضیحات پروژه</label>
+            <textarea class="form-control" id="PrpjectInfo" cols="5" rows="4" placeholder="این پروژه دو نفره است و گروه های دو نفره میتوانند با کمک  هم این پروژه رو انجام بدن"></textarea>
+        </div>
+        <!-- دکمه ثبت -->
+        <button type="button" class="btn btn-blue w-100 py-2 mb-1">ویرایش</button>
+        <!-- دکمه پروژه های ایجاد شده -->
+        <button type="button" class="btn btn-secondary w-100 py-2 mb-1">حذف</button>
+    </form>
+</section>
+{% endblock %}

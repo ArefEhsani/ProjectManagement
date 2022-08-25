@@ -1,0 +1,55 @@
+{% load static %}
+<!-- دکمه منوی همبرگری -->
+<i class="bi bi-list btn-open bg-light active-side" onclick="show()"></i>
+<!--  منوی همبرگری -->
+<section class="d-flex flex-column flex-shrink-0 p-3 bg-light section-sidebar active-side">
+    <!-- پروفایل -->
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{% static 'Image/profile.png' %}" alt="profile" width="32" height="32" class="rounded-circle me-2">
+            <strong>پروفایل</strong>
+        </a>
+        <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" href="./Project Selection.html">اخذ پروژه</a></li>
+            <li><a class="dropdown-item" href="#">تنظیمات</a></li>
+            <li><a class="dropdown-item" href="#">پروفایل</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">خروج</a></li>
+        </ul>
+    </div>
+    <hr>
+    <!-- منو ها -->
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a href="./Project Selection.html" class="nav-link link-dark">
+                <i class="bi bi-file-earmark-ppt-fill me-2"></i>
+                اخذ پروژه
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="./project proposal.html" class="nav-link link-dark">
+                <i class="bi bi-sticky-fill me-2"></i>
+                پیشنهاد موضوع پروژه
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="./Report project.html" class="nav-link link-dark">
+                <i class="bi bi-pencil-fill me-2"></i>
+                گزارش ها و تکالیف
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="./Final project.html" class="nav-link active">
+                <i class="bi bi-pencil-square me-2"></i>
+                گزارش نهایی
+            </a>
+        </li>
+    </ul>
+    <hr>
+    <!-- پا صفحه -->
+    <span class="text-muted small w-100 text-center">
+        Powered by Bootstrap
+    </span>
+</section>

@@ -1,0 +1,42 @@
+{% extends 'teachers/includes/_layout.html' %}
+{% load static %}
+{% block title %}بایگانی{% endblock %}
+{% block content %}
+<!-- بخش اصلی صفحه -->
+<section class="main active-side">
+    <table class="table table-primary table-striped list-final-report">
+        <!-- منو -->
+        <tr>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th> موضوع </th>
+            <th> پروژه </th>
+        </tr>
+        <!-- بدنه و ایتم ها -->
+        <tr>
+            <td>فاطمه</td>
+            <td>عطایی</td>
+            <td>سامانه اداری</td>
+            <td>
+                <a href="./Final Archive.html"> نمایش </a>
+            </td>
+        </tr>
+        <tr>
+            <td>حنانه</td>
+            <td>بخشی</td>
+            <td>سیسم حضور و غیاب</td>
+            <td>
+                <a href="./Final Archive.html"> نمایش </a>
+            </td>
+        </tr>
+        <tr>
+            <td>زهرا</td>
+            <td>شکری</td>
+            <td>سیستم مدیریتی</td>
+            <td>
+                <a href="./Final Archive.html"> نمایش </a>
+            </td>
+        </tr>
+    </table>
+</section>
+{% endblock %}

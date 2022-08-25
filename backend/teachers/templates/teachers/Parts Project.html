@@ -1,0 +1,30 @@
+{% extends 'teachers/includes/_layout.html' %}
+{% load static %}
+{% block title %}ایجاد پروژه{% endblock %}
+{% block content %}
+<!-- بخش اصلی -->
+<section class="main active-side">
+    <!-- فرم -->
+    <form class="form">
+        <p class="small">فعال کردن و غیر فعال کردن بخش های منوی دانشجو.</p>
+        <div class="form-check form-switch mb-2">
+            <input class="form-check-input" type="checkbox" role="switch" id="akhz" checked>
+            <label class="form-check-label" for="akhz">اخذ پروژه</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+            <input class="form-check-input" type="checkbox" role="switch" id="pish" checked>
+            <label class="form-check-label" for="pish">پیشنهاد موضوع پروژه</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+            <input class="form-check-input" type="checkbox" role="switch" id="gozarsh" checked>
+            <label class="form-check-label" for="gozarsh">گزارش ها وتکالیف</label>
+        </div>
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="gozarsh_final" checked>
+            <label class="form-check-label" for="gozarsh_final">گزارش نهایی</label>
+        </div>
+        <!-- دکمه ثبت -->
+        <button type="submit" class="btn btn-blue w-50 py-2 mb-1">ثبت</button>
+    </form>
+</section>
+{% endblock %}

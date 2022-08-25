@@ -1,0 +1,42 @@
+{% extends 'students/includes/_layout.html' %}
+{% load static %}
+{% block title %}گزارش نهایی{% endblock %}
+{% block content %}
+<!-- بخش اصلی پروژه -->
+<section class="main active-side">
+    <div class="form">
+        <!-- توضحات آپلود کردن -->
+        <h5 class="mb-3">ارسال گزارش نهایی پروژه</h5>
+        <p>
+            فایل های نهایی پروژه خود را بارگزاری کنید و ارسال کنید.
+            <br>
+            <ol>
+                <li>فایل کامل پروژه با فرمت zip یا rar</li>
+                <li>گزارش کامل پروژه (word)</li>
+                <li>گزارش کامل پروژه (pdf)</li>
+                <li>یک فیلم کوتاه از اجرای پروژه</li>
+            </ol>
+            <span class="small text-muted">
+                درصورتی که فایل پروژه شما بیش از 10MB است، فایل های خود را در جاییی بارگزاری کنید و لینک دانلود آن
+                را در
+                بخش توضیحات ارسال کنید.
+            </span>
+        </p>
+        <!-- فرم آپلود فایل های نهایی پروژه -->
+        <form>
+            <!-- باکس آپلود -->
+            <div class="file-drop-area mb-3">
+                <span class="fake-btn">انتخاب فایل ها</span>
+                <span class="file-msg">یا کشیدن و رها کردن</span>
+                <input class="file-input" type="file" multiple>
+            </div>
+            <!-- توضیحات -->
+            <div class="mb-3">
+                <label for="PrpjectDiscripiton" class="form-label">توضیحات اختیاری</label>
+                <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-blue w-100 py-2">ارسال</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

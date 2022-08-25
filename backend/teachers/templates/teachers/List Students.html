@@ -1,0 +1,46 @@
+{% extends 'teachers/includes/_layout.html' %}
+{% load static %}
+{% block title %}لیست دانشجویان{% endblock %}
+{% block content %}
+<!-- بخش اصلی صفحه -->
+<section class="main active-side">
+    <table class="table table-primary table-striped list-students">
+        <!-- منو -->
+        <tr>
+            <th>ردیف</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>پروژه</th>
+            <th>عملیات</th>
+        </tr>
+        <!-- بدنه و ایتم ها -->
+        <tr>
+            <th>1</th>
+            <td>فاطمه</td>
+            <td>عطایی</td>
+            <td>سیستم مدیریت هواشناسی</td>
+            <td>
+                <i class="bi bi-trash-fill"></i>
+            </td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>زهرا</td>
+            <td>قربانی</td>
+            <td>سیستم تشخیص پلاک</td>
+            <td>
+                <i class="bi bi-trash-fill"></i>
+            </td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>معصومه</td>
+            <td>شعبانی</td>
+            <td>سیستم مدیریت حضور و غیاب</td>
+            <td>
+                <i class="bi bi-trash-fill"></i>
+            </td>
+        </tr>
+    </table>
+</section>
+{% endblock %}

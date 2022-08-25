@@ -1,0 +1,38 @@
+{% extends 'teachers/includes/_layout.html' %}
+{% load static %}
+{% block title %}گزارش نهایی{% endblock %}
+{% block content %}
+<!-- بخش اصلی صفحه -->
+<section class="main active-side">
+    <table class="table table-primary table-striped list-final-report">
+        <!-- منو -->
+        <tr>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th> گزارش نهایی</th>
+        </tr>
+        <!-- بدنه و ایتم ها -->
+        <tr>
+            <td>فاطمه</td>
+            <td>عطایی</td>
+            <td>
+                <a href="./Final.html"> نمایش </a>
+            </td>
+        </tr>
+        <tr>
+            <td>حنانه</td>
+            <td>بخشی</td>
+            <td>
+                <a href="#"> ارسال نشده </a>
+            </td>
+        </tr>
+        <tr>
+            <td>زهرا</td>
+            <td>شکری</td>
+            <td>
+                <a href="./Final.html"> نمایش </a>
+            </td>
+        </tr>
+    </table>
+</section>
+{% endblock %}

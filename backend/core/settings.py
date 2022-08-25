@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # My Apps
     'accounts.apps.AccountsConfig',
     'administration.apps.AdministrationConfig',
+    'students.apps.StudentsConfig',
+    'teachers.apps.TeachersConfig',
     # Third Party Packages
     'django_cleanup.apps.CleanupConfig',
 ]
