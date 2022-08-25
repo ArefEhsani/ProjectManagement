@@ -5,22 +5,23 @@
 <!-- بخش اصلی -->
 <section class="main active-side">
     <!-- فرم -->
-    <form class="form">
+    <form class="form" method="post">
+        {% csrf_token %}
         <p class="small">فعال کردن و غیر فعال کردن بخش های منوی دانشجو.</p>
         <div class="form-check form-switch mb-2">
-            <input class="form-check-input" type="checkbox" role="switch" id="akhz" checked>
+            <input name="can_get" class="form-check-input" type="checkbox" role="switch" id="akhz" {% if settings.can_get %} checked {% endif %}>
             <label class="form-check-label" for="akhz">اخذ پروژه</label>
         </div>
         <div class="form-check form-switch mb-2">
-            <input class="form-check-input" type="checkbox" role="switch" id="pish" checked>
+            <input name="suggest" class="form-check-input" type="checkbox" role="switch" id="pish" {% if settings.suggest %} checked {% endif %}>
             <label class="form-check-label" for="pish">پیشنهاد موضوع پروژه</label>
         </div>
         <div class="form-check form-switch mb-2">
-            <input class="form-check-input" type="checkbox" role="switch" id="gozarsh" checked>
+            <input name="reports" class="form-check-input" type="checkbox" role="switch" id="gozarsh" {% if settings.reports %} checked {% endif %}>
             <label class="form-check-label" for="gozarsh">گزارش ها وتکالیف</label>
         </div>
         <div class="form-check form-switch mb-3">
-            <input class="form-check-input" type="checkbox" role="switch" id="gozarsh_final" checked>
+            <input name="final_report" class="form-check-input" type="checkbox" role="switch" id="gozarsh_final" {% if settings.final_report %} checked {% endif %}>
             <label class="form-check-label" for="gozarsh_final">گزارش نهایی</label>
         </div>
         <!-- دکمه ثبت -->

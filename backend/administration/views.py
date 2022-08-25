@@ -17,7 +17,7 @@ def teachers_list(request):
         password = request.POST.get("password")
         user = User.objects.create(username=username, password=password)
         CollegeUsers.objects.create(user=user, firstname=firstname, lastname=lastname, is_teacher=True)
-        return redirect(reverse("teachers_list"))
+        return redirect(reverse("a_teachers_list"))
 
     context = {
         'teachers': CollegeUsers.objects.filter(is_teacher=True),
@@ -31,7 +31,7 @@ def delete_teacher(request, id):
     teacher = get_object_or_404(CollegeUsers, id=id)
     user = User.objects.get(id=teacher.user.id)
     user.delete()
-    return redirect(reverse("teachers_list"))
+    return redirect(reverse("a_teachers_list"))
 
 
 @login_required
@@ -41,9 +41,9 @@ def students_list(request):
         lastname = request.POST.get("lastname")
         username = request.POST.get("username")
         password = request.POST.get("password")
-        user = User.objects.create(username=username, password=password)
+        user = User.objects.create(username=username, first_name=firstname, last_name=lastname, password=password)
         CollegeUsers.objects.create(user=user, firstname=firstname, lastname=lastname, is_student=True)
-        return redirect(reverse("students_list"))
+        return redirect(reverse("a_students_list"))
 
     context = {
         'students': CollegeUsers.objects.filter(is_student=True),
@@ -57,7 +57,7 @@ def delete_student(request, id):
     student = get_object_or_404(CollegeUsers, id=id)
     user = User.objects.get(id=student.user.id)
     user.delete()
-    return redirect(reverse("students_list"))
+    return redirect(reverse("a_students_list"))
 
 
 def projects_list(request):

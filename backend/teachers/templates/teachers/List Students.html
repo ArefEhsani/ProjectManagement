@@ -14,33 +14,19 @@
             <th>عملیات</th>
         </tr>
         <!-- بدنه و ایتم ها -->
+        {% for student in students %}
         <tr>
-            <th>1</th>
-            <td>فاطمه</td>
-            <td>عطایی</td>
-            <td>سیستم مدیریت هواشناسی</td>
+            <th>{{ forloop.counter }}</th>
+            <td>{{ student.firstname }}</td>
+            <td>{{ student.lastname }}</td>
+            <td>{{ student.project.title }}</td>
             <td>
-                <i class="bi bi-trash-fill"></i>
+                <a href="/teachers/students-list/delete/{{ student.id }}">
+                    <i class="bi bi-trash-fill text-danger"></i>
+                </a>
             </td>
         </tr>
-        <tr>
-            <th>2</th>
-            <td>زهرا</td>
-            <td>قربانی</td>
-            <td>سیستم تشخیص پلاک</td>
-            <td>
-                <i class="bi bi-trash-fill"></i>
-            </td>
-        </tr>
-        <tr>
-            <th>3</th>
-            <td>معصومه</td>
-            <td>شعبانی</td>
-            <td>سیستم مدیریت حضور و غیاب</td>
-            <td>
-                <i class="bi bi-trash-fill"></i>
-            </td>
-        </tr>
+        {% endfor %}
     </table>
 </section>
 {% endblock %}

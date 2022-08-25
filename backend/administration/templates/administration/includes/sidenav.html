@@ -22,19 +22,19 @@
     <!-- منو -->
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="{% url 'teachers_list' %}" class="nav-link {% if active_tab == 'teachers_list' %} active {% else %} link-dark {% endif %}">
+            <a href="{% url 'a_teachers_list' %}" class="nav-link {% if active_tab == 'teachers_list' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-person-video3 me-2"></i>
                 لیست اساتید
             </a>
         </li>
         <li class="nav-item">
-            <a href="{% url 'students_list' %}" class="nav-link {% if active_tab == 'students_list' %} active {% else %} link-dark {% endif %}">
+            <a href="{% url 'a_students_list' %}" class="nav-link {% if active_tab == 'students_list' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-person-fill  me-2"></i>
                 لیست دانشجویان
             </a>
         </li>
         <li class="nav-item">
-            <a href="./List projects.html" class="nav-link {% if active_tab == 'projects_list' %} active {% else %} link-dark {% endif %}">
+            <a href="{% url 'a_projects_list' %}" class="nav-link {% if active_tab == 'projects_list' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-card-checklist me-2"></i>
                 لیست پروژه ها
             </a>

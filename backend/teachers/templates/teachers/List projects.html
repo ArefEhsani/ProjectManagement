@@ -1,4 +1,4 @@
-{% extends 'teachers/includes/_layout.html' %}
+{% extends 'administration/includes/_layout.html' %}
 {% load static %}
 {% block title %}لیست پروژه‌ها{% endblock %}
 {% block content %}
@@ -6,51 +6,17 @@
 <section class="main active-side">
     <div class="list-group list-group-checkable  gap-2 w-auto">
         <!-- ایتم های انتخاب پروژه -->
-        <a href="./project.html">
+        {% for project in projects %}
+        <div>
             <label class="list-group-item rounded-3 py-3">
-                <span> سامانه مدیریتی حضور غیاب</span>
+                <span>{{ project.title }}</span>
                 <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب، دسکتاپ، موبایل</span>
-                    <span> <strong>2</strong> نفره </span>
+                    <span>{{ project.get_type_display  }}</span>
+                    <span> <strong>{{ project.get_number_of_students_display }}</strong> نفره </span>
                 </div>
             </label>
-        </a>
-        <a href="./project.html">
-            <label class="list-group-item rounded-3 py-3">
-                <span> سامانه هوشمند آب و هوا </span>
-                <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب</span>
-                    <span> <strong>1</strong> نفره </span>
-                </div>
-            </label>
-        </a>
-        <a href="./project.html">
-            <label class="list-group-item rounded-3 py-3">
-                <span> سامانه مدیریتی آتش نشانی </span>
-                <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب، دسکتاپ، موبایل</span>
-                    <span> <strong>3</strong> نفره </span>
-                </div>
-            </label>
-        </a>
-        <a href="./project.html">
-            <label class="list-group-item rounded-3 py-3">
-                <span> وسایت فروشگاهی </span>
-                <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب</span>
-                    <span> <strong>1</strong> نفره </span>
-                </div>
-            </label>
-        </a>
-        <a href="./project.html">
-            <label class="list-group-item rounded-3 py-3">
-                <span> سایت با وردپرس </span>
-                <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب </span>
-                    <span> <strong>1</strong> نفره </span>
-                </div>
-            </label>
-        </a>
+        </div>
+        {% endfor %}
     </div>
 </section>
 {% endblock %}
