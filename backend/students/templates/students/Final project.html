@@ -23,19 +23,32 @@
             </span>
         </p>
         <!-- فرم آپلود فایل های نهایی پروژه -->
-        <form>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
             <!-- باکس آپلود -->
             <div class="file-drop-area mb-3">
+                {% if final_report %}
+                {% if final_report.file %}
+                <span class="file-msg">
+                    <a href="{{ final_report.file.url }}">فایل قبلی</a>
+                </span>
+                {% else %}
+                <span class="file-msg">شما فایلی بارگزاری نکردید</span>
+                {% endif %}
+                {% else %}
                 <span class="fake-btn">انتخاب فایل ها</span>
                 <span class="file-msg">یا کشیدن و رها کردن</span>
-                <input class="file-input" type="file" multiple>
+                <input name="report_file" class="file-input" type="file">
+                {% endif %}
             </div>
             <!-- توضیحات -->
             <div class="mb-3">
                 <label for="PrpjectDiscripiton" class="form-label">توضیحات اختیاری</label>
-                <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4"></textarea>
+                <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4" {% if final_report %} disabled {% endif %}>{{ final_report.description }}</textarea>
             </div>
+            {% if not final_report %}
             <button type="submit" class="btn btn-blue w-100 py-2">ارسال</button>
+            {% endif %}
         </form>
     </div>
 </section>

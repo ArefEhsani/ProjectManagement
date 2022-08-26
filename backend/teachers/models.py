@@ -16,17 +16,11 @@ class ProjectSetting(models.Model):
 
 
 class ReportParts(models.Model):
-    report1 = models.BooleanField(default=True)
-    report2 = models.BooleanField(default=False)
-    report3 = models.BooleanField(default=False)
-    report4 = models.BooleanField(default=False)
-    report5 = models.BooleanField(default=False)
-    report6 = models.BooleanField(default=False)
-    report7 = models.BooleanField(default=False)
-    report8 = models.BooleanField(default=False)
+    number = models.IntegerField()
+    is_active = models.BooleanField(default=False)
 
     def __str__(self):
-        return "برای تغییر ضربه بزنید"
+        return f"Part {self.number}"
 
 
 class ProjectReport(models.Model):

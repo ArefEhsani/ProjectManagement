@@ -86,24 +86,18 @@ def confirm_suggestion(request, id):
 
 
 def reports_list(request):
-    activation = ReportParts.objects.filter(id=1)
+    all_part_objects = ReportParts.objects.all()
     if request.method == "POST":
-        report1 = False if not request.POST.get("report1") else True
-        report2 = False if not request.POST.get("report2") else True
-        report3 = False if not request.POST.get("report3") else True
-        report4 = False if not request.POST.get("report4") else True
-        report5 = False if not request.POST.get("report5") else True
-        report6 = False if not request.POST.get("report6") else True
-        report7 = False if not request.POST.get("report7") else True
-        report8 = False if not request.POST.get("report8") else True
-        if activation:
-            activation.update(report1=report1, report2=report2, report3=report3, report4=report4, report5=report5, report6=report6, report7=report7, report8=report8)
-        else:
-            ReportParts.objects.create(report1=report1, report2=report2, report3=report3, report4=report4, report5=report5, report6=report6, report7=report7, report8=report8)
-        return redirect(reverse("t_reports_list"))
+        selected = request.POST.getlist("report_number")
+        for part in all_part_objects:
+            if str(part.id) in selected:
+                part.is_active = True
+            else:
+                part.is_active = False
+            part.save()
     context = {
         'active_tab': 'reports_list',
-        'activation': activation.last(),
+        'report_parts': all_part_objects,
         'reports': ProjectReport.objects.all(),
     }
     return render(request, 'teachers/List Reports.html', context)

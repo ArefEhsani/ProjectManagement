@@ -8,8 +8,9 @@
         <!-- توضحات آپلود کردن -->
         <h5 class="mb-3">ارسال گزارش <span class="text-primary">اول</span> پروژه</h5>
         <p>
-            <p class="small bg-primary text-light p-1 rounded d-inline">مهلت : <span> 30 شهریور 1401 ساعت 12:00
-                </span></p>
+            <p class="small bg-primary text-light p-1 rounded d-inline">
+                <span>گزارش شماره {{ student_report.number }}</span>
+            </p>
             <br><br>
             فایل تکالیف یا گزارش پروژه خود را بارگزاری کنید و ذخیره کنید.
             <br>
@@ -24,44 +25,34 @@
             </span>
         </p>
         <!-- فرم آپلود فایل های نهایی پروژه -->
-        <form>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
             <!-- باکس آپلود -->
             <div class="file-drop-area mb-3">
+                {% if student_report %}
+                {% if student_report.file %}
+                <span class="file-msg">
+                    <a href="{{ student_report.file.url }}">فایل قبلی</a>
+                </span>
+                {% else %}
+                <span class="file-msg">شما فایلی بارگزاری نکردید</span>
+                {% endif %}
+                {% else %}
                 <span class="fake-btn">انتخاب فایل ها</span>
                 <span class="file-msg">یا کشیدن و رها کردن</span>
-                <input class="file-input" type="file" multiple>
+                <input name="report_file" class="file-input" type="file">
+                {% endif %}
             </div>
             <!-- توضیحات -->
             <div class="mb-3">
                 <label for="PrpjectDiscripiton" class="form-label">توضیحات اختیاری</label>
-                <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4"></textarea>
+                <textarea name="description" class="form-control" id="PrpjectDiscripiton" cols="5" rows="4" {% if student_report %} disabled {% endif %}>{{ student_report.description }}</textarea>
             </div>
+            {% if not student_report %}
             <button type="submit" class="btn btn-blue w-25 py-2">ذخیره</button>
-            <a href="./Report project.html" class="btn btn-secondary w-25 py-2">لغو</a>
+            {% endif %}
+            <a href="{% url 's_report_parts' %}" class="btn btn-secondary w-25 py-2">لغو</a>
         </form>
-        <!-- توضیحات ارسالی -->
-        <table class="descripiton-send w-100 mt-5">
-            <tr>
-                <td>وضعیت تحویل</td>
-                <td>خالی</td>
-            </tr>
-            <tr>
-                <td>نمره</td>
-                <td>خالی</td>
-            </tr>
-            <tr>
-                <td>زمان تحویل</td>
-                <td>خالی</td>
-            </tr>
-            <tr>
-                <td>فایل ارسالی</td>
-                <td>خالی</td>
-            </tr>
-            <tr>
-                <td>توضیحات</td>
-                <td>خالی</td>
-            </tr>
-        </table>
     </div>
 </section>
 {% endblock %}

@@ -49,46 +49,15 @@
         {% csrf_token %}
         <p class="small">فعال کردن و غیر فعال کردن گرازش های دانشجو.</p>
         <div class="row">
-            <!-- گزارش های 1 تا 4 -->
             <div class="col-md">
+                {% for part_active in report_parts %}
                 <div class="form-check form-switch mb-2">
-                    <input name="report1" class="form-check-input" type="checkbox" id="goz1" {% if activation.report1 %} checked {% endif %}>
-                    <label class="form-check-label" for="goz1"> گزارش 1 </label>
+                    <input name="report_number" class="form-check-input" type="checkbox" id="goz{{ part_active.id }}" value="{{ part_active.id }}" {% if part_active.is_active %} checked {% endif %}>
+                    <label class="form-check-label" for="goz1"> گزارش {{ part_active.id }} </label>
                 </div>
-                <div class="form-check form-switch mb-2">
-                    <input name="report2" class="form-check-input" type="checkbox" id="goz2" {% if activation.report2 %} checked {% endif %}>
-                    <label class="form-check-label" for="goz2"> گزارش 2 </label>
-                </div>
-                <div class="form-check form-switch mb-2">
-                    <input name="report3" class="form-check-input" type="checkbox" id="goz3" {% if activation.report3 %} checked {% endif %}>
-                    <label class="form-check-label" for="goz3"> گزارش 3 </label>
-                </div>
-                <div class="form-check form-switch">
-                    <input name="report4" class="form-check-input" type="checkbox" id="goz4" {% if activation.report4 %} checked {% endif %}>
-                    <label class="form-check-label" for="goz4"> گزارش 4 </label>
-                </div>
-            </div>
-            <!-- گزارش های 5 تا 8 -->
-            <div class="col-md">
-                <div class="form-check form-switch mb-2">
-                    <input name="report5" class="form-check-input" type="checkbox" id="goz5" {% if activation.report5 %} checked {% endif %}>
-                    <label class="form-check-label" for="goz5"> گزارش 5 </label>
-                </div>
-                <div class="form-check form-switch mb-2">
-                    <input name="report6" class="form-check-input" type="checkbox" id="goz6" {% if activation.report6 %} checked {% endif %}>
-                    <label class="form-check-label" for="goz6"> گزارش 6 </label>
-                </div>
-                <div class="form-check form-switch mb-2">
-                    <input name="report7" class="form-check-input" type="checkbox" id="goz7" {% if activation.report7 %} checked {% endif %}>
-                    <label class="form-check-label" for="goz7"> گزارش 7 </label>
-                </div>
-                <div class="form-check form-switch mb-3">
-                    <input name="report8" class="form-check-input" type="checkbox" id="goz8" {% if activation.report8 %} checked {% endif %}>
-                    <label class="form-check-label" for="goz8"> گزارش 8 </label>
-                </div>
+                {% endfor %}
             </div>
         </div>
-
         <!-- دکمه ثبت -->
         <button type="submit" class="btn btn-blue w-50 py-2 mb-1">ثبت</button>
     </form>
