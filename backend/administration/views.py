@@ -17,8 +17,10 @@ def teachers_list(request):
         lastname = request.POST.get("lastname")
         username = request.POST.get("username")
         password = request.POST.get("password")
-        user = User.objects.create(username=username, password=password)
-        CollegeUsers.objects.create(user=user, firstname=firstname, lastname=lastname, is_teacher=True)
+        user = User.objects.create_user(
+            username=username, first_name=firstname, last_name=lastname, password=password)
+        CollegeUsers.objects.create(
+            user=user, firstname=firstname, lastname=lastname, is_teacher=True, is_student=False)
         return redirect(reverse("a_teachers_list"))
 
     context = {
@@ -43,12 +45,14 @@ def students_list(request):
         lastname = request.POST.get("lastname")
         username = request.POST.get("username")
         password = request.POST.get("password")
-        user = User.objects.create(username=username, first_name=firstname, last_name=lastname, password=password)
-        CollegeUsers.objects.create(user=user, firstname=firstname, lastname=lastname, is_student=True)
+        user = User.objects.create_user(
+            username=username, first_name=firstname, last_name=lastname, password=password)
+        CollegeUsers.objects.create(
+            user=user, firstname=firstname, lastname=lastname, is_student=True, is_teacher=False)
         return redirect(reverse("a_students_list"))
 
     context = {
-        'students': CollegeUsers.objects.filter(is_student=True),
+        'students': CollegeUsers.objects.filter(is_student=True, is_teacher=False),
         'active_tab': 'students_list',
     }
     return render(request, "administration/List Students.html", context)
