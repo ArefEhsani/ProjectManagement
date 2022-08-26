@@ -9,7 +9,7 @@
         <!-- ایتم های انتخاب پروژه -->
         {% for project in projects %}
         <div>
-            <input class="list-group-item-check" type="radio" name="projects" id="radios{{ project.id }}" checked value="{{ project.id }}">
+            <input class="list-group-item-check" type="radio" name="projects" id="radios{{ project.id }}" value="{{ project.id }}" {% if project.number_of_students <= project.number_of_taken %} disabled {% endif %}>
             <label class="list-group-item rounded-3 py-3" for="radios{{ project.id }}">
                 <span>{{ project.title }}</span>
                 <div class="small opacity-50 d-flex justify-content-between">

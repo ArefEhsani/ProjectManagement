@@ -87,6 +87,10 @@ def confirm_suggestion(request, id):
 
 def reports_list(request):
     all_part_objects = ReportParts.objects.all()
+    if not all_part_objects:
+        for r in range(1, 9):
+            ReportParts.objects.create(number=r, is_active=True)
+        return redirect(reverse('t_reports_list'))
     if request.method == "POST":
         selected = request.POST.getlist("report_number")
         for part in all_part_objects:
@@ -95,6 +99,7 @@ def reports_list(request):
             else:
                 part.is_active = False
             part.save()
+        return redirect(reverse('t_reports_list'))
     context = {
         'active_tab': 'reports_list',
         'report_parts': all_part_objects,

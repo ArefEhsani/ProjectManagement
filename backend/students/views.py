@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 from accounts.models import CollegeUsers
 from teachers.models import Project, ReportParts, ProjectReport, FinalReport, ProjectSetting
 from django.shortcuts import get_object_or_404
-from django.http import Http404
-# Create your views here.
+from django.http import Http404, HttpResponse
+from django.db.models import Count
 
 
 def get_project(request):
@@ -20,9 +20,10 @@ def get_project(request):
         project = Project.objects.get(id=selected)
         student.project = project
         student.save()
+    projects_user = Project.objects.filter(is_suggested=False).annotate(number_of_taken=Count('collegeusers'))
     context = {
         'active_tab': 'get_project',
-        'projects': Project.objects.filter(is_suggested=False),
+        'projects': projects_user,
     }
     return render(request, 'students/Project Selection.html', context)
 
