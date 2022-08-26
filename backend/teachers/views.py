@@ -143,3 +143,18 @@ def final_report_detail(request, id):
         'report': report,
     }
     return render(request, 'teachers/Final.html', context)
+
+
+def archive_report_list(request):
+    context = {
+        'archive_reports': FinalReport.objects.filter(is_archive=True)
+    }
+    return render(request, 'teachers/Archive.html', context)
+
+
+def archive_report_detail(request, id):
+    report = get_object_or_404(FinalReport, id=id)
+    context = {
+        'report': report,
+    }
+    return render(request, 'teachers/Final Archive.html', context)

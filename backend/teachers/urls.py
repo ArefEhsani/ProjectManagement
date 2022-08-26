@@ -12,4 +12,6 @@ urlpatterns = [
     path('reports_list/<id>', views.report_detail, name="t_report_detail"),
     path('final-reports-list', views.final_reports_list, name="t_final_reports_list"),
     path('final-reports-list/<id>', views.final_report_detail, name="t_final_report_detail"),
+    path('archive-report-list', views.archive_report_list, name="t_archive_report_list"),
+    path('archive-report-list/<id>', views.archive_report_detail, name="t_archive_report_detail"),
 ]

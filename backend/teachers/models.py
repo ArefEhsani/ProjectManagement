@@ -1,5 +1,6 @@
 from django.db import models
 from accounts.models import CollegeUsers
+from administration.models import Project
 
 # Create your models here.
 
@@ -43,6 +44,7 @@ class ProjectReport(models.Model):
 
 class FinalReport(models.Model):
     student = models.ForeignKey(CollegeUsers, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True)
     file = models.FileField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     mark = models.IntegerField(null=True, blank=True)
