@@ -4,58 +4,21 @@
 {% block content %}
 <!-- بخش اصلی صفحه -->
 <section class="main active-side">
-    <form class="list-group list-group-checkable  gap-2 w-auto">
+    <form class="list-group list-group-checkable  gap-2 w-auto" method="post">
+        {% csrf_token %}
         <!-- ایتم های انتخاب پروژه -->
+        {% for project in projects %}
         <div>
-            <input class="list-group-item-check" type="radio" name="radios" id="radios1" checked>
-            <label class="list-group-item rounded-3 py-3" for="radios1">
-                <span> سامانه مدیریتی حضور غیاب</span>
+            <input class="list-group-item-check" type="radio" name="projects" id="radios{{ project.id }}" checked value="{{ project.id }}">
+            <label class="list-group-item rounded-3 py-3" for="radios{{ project.id }}">
+                <span>{{ project.title }}</span>
                 <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب، دسکتاپ، موبایل</span>
-                    <span> <strong>2</strong> نفره </span>
+                    <span>{{ project.get_type_display }}</span>
+                    <span> <strong>{{ project.get_number_of_students_display }}</strong> نفره </span>
                 </div>
             </label>
         </div>
-        <div>
-            <input class="list-group-item-check" type="radio" name="radios" id="radios2" disabled>
-            <label class="list-group-item rounded-3 py-3" for="radios2">
-                <span> سامانه هوشمند آب و هوا </span>
-                <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب</span>
-                    <span> <strong>1</strong> نفره </span>
-                </div>
-            </label>
-        </div>
-        <div>
-            <input class="list-group-item-check" type="radio" name="radios" id="radios3">
-            <label class="list-group-item rounded-3 py-3" for="radios3">
-                <span> سامانه مدیریتی آتش نشانی </span>
-                <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب، دسکتاپ، موبایل</span>
-                    <span> <strong>3</strong> نفره </span>
-                </div>
-            </label>
-        </div>
-        <div>
-            <input class="list-group-item-check" type="radio" name="radios" id="radios4">
-            <label class="list-group-item rounded-3 py-3" for="radios4">
-                <span> وسایت فروشگاهی </span>
-                <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب</span>
-                    <span> <strong>1</strong> نفره </span>
-                </div>
-            </label>
-        </div>
-        <div>
-            <input class="list-group-item-check" type="radio" name="radios" id="radios5" disabled>
-            <label class="list-group-item rounded-3 py-3" for="radios5">
-                <span> سایت با وردپرس </span>
-                <div class="small opacity-50 d-flex justify-content-between">
-                    <span>تحت وب </span>
-                    <span> <strong>1</strong> نفره </span>
-                </div>
-            </label>
-        </div>
+        {% endfor %}
         <button class="btn btn-blue py-2">ثبت</button>
     </form>
 </section>
