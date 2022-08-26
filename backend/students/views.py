@@ -75,6 +75,7 @@ def report_part_detail(request, id):
     context = {
         'active_tab': 'report_part_detail',
         'student_report': student_part_report,
+        'number': id,
     }
     return render(request, 'students/Reports.html', context)
 

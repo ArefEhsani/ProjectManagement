@@ -6,6 +6,10 @@ from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 
+def handler404(request, exception):
+    return render(request, 'http_status/404.html', status=404)
+
+
 def login_page(request):
     if request.user.is_authenticated:
         user = User.objects.get(id=request.user.id)
