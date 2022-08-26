@@ -117,6 +117,7 @@ def report_detail(request, id):
         report.save()
         return redirect(reverse('t_reports_list'))
     context = {
+        'active_tab': 'report_detail',
         'report': report,
     }
     return render(request, 'teachers/Reports.html', context)
@@ -124,6 +125,7 @@ def report_detail(request, id):
 
 def final_reports_list(request):
     context = {
+        'active_tab': 'final_reports_list',
         'final_reports': FinalReport.objects.filter(is_archive=False)
     }
     return render(request, 'teachers/Final Reports.html', context)
@@ -140,6 +142,7 @@ def final_report_detail(request, id):
         report.save()
         return redirect(reverse('t_final_reports_list'))
     context = {
+        'active_tab': 'final_report_detail',
         'report': report,
     }
     return render(request, 'teachers/Final.html', context)
@@ -147,6 +150,7 @@ def final_report_detail(request, id):
 
 def archive_report_list(request):
     context = {
+        'active_tab': 'archive_report_list',
         'archive_reports': FinalReport.objects.filter(is_archive=True)
     }
     return render(request, 'teachers/Archive.html', context)
@@ -155,6 +159,7 @@ def archive_report_list(request):
 def archive_report_detail(request, id):
     report = get_object_or_404(FinalReport, id=id)
     context = {
+        'active_tab': 'archive_report_detail',
         'report': report,
     }
     return render(request, 'teachers/Final Archive.html', context)

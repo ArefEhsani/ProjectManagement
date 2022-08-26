@@ -20,50 +20,50 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="./Parts Project.html" class="nav-link link-dark">
+            <a href="{% url 't_student_permissions' %}" class="nav-link {% if active_tab == 'student_permissions' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-toggles me-2"></i>
                 بخش های دانشجو
             </a>
         </li>
         <li class="nav-item">
-            <a href="./Create project.html" class="nav-link link-dark">
+            <a href="{% url 't_create_project' %}" class="nav-link {% if active_tab == 'create_project' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-folder-plus me-2"></i>
                 ایجاد پروژه
             </a>
         </li>
         <li class="nav-item">
-            <a href="./List projects.html" class="nav-link link-dark">
+            <a href="{% url 't_projects_list' %}" class="nav-link {% if active_tab == 'projects_list' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-card-checklist me-2"></i>
                 لیست پروژه ها
             </a>
         </li>
         <li class="nav-item">
-            <a href="./List Students.html" class="nav-link link-dark">
+            <a href="{% url 't_students_list' %}" class="nav-link {% if active_tab == 'students_list' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-person-fill  me-2"></i>
                 لیست دانشجویان
             </a>
         </li>
         <li class="nav-item">
-            <a href="./List Suggestions.html" class="nav-link link-dark">
+            <a href="{% url 't_suggestions_list' %}" class="nav-link {% if active_tab == 'suggestions_list' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-file-earmark-person-fill me-2"></i>
                 پیشنهادات دانشجویان
             </a>
         </li>
         <li class="nav-item">
-            <a href="./List Reports.html" class="nav-link link-dark">
+            <a href="{% url 't_reports_list' %}" class="nav-link {% if active_tab == 'reports_list' or active_tab == 'report_detail' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-file-earmark-fill"></i>
                 گزارش ها و تکالیف ترم
             </a>
             <!-- تعریف امالیف -->
         </li>
         <li class="nav-item">
-            <a href="./Final Reports.html" class="nav-link link-dark">
+            <a href="{% url 't_final_reports_list' %}" class="nav-link {% if active_tab == 'final_reports_list' or active_tab == 'final_report_detail' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-file-earmark-check-fill me-2"></i>
                 گزارشات نهایی
             </a>
         </li>
         <li class="nav-item">
-            <a href="./Archive.html" class="nav-link active">
+            <a href="{% url 't_archive_report_list' %}" class="nav-link {% if active_tab == 'archive_report_list' or active_tab == 'archive_report_detail' %} active {% else %} link-dark {% endif %}">
                 <i class="bi bi-file-earmark-zip-fill me-2"></i>
                 بایگانی
             </a>
