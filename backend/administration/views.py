@@ -5,6 +5,7 @@ from accounts.models import CollegeUsers
 from django.urls import reverse
 from django.contrib.auth.models import User
 from .models import Project
+from teachers.models import FinalReport, ProjectReport
 # Create your views here.
 
 
@@ -66,3 +67,62 @@ def projects_list(request):
         'active_tab': 'projects_list',
     }
     return render(request, "administration/List projects.html", context)
+
+
+def marks_list(request):
+    context = {
+        'active_tab': 'marks_list',
+        'reports': FinalReport.objects.filter()
+    }
+    return render(request, 'administration/List Number.html', context)
+
+
+def reports_list(request):
+    context = {
+        'active_tab': 'reports_list',
+        'reports': ProjectReport.objects.all(),
+    }
+    return render(request, 'administration/List Reports.html', context)
+
+
+def report_detail(request, id):
+    report = get_object_or_404(ProjectReport, id=id)
+    context = {
+        'active_tab': 'report_detail',
+        'report': report,
+    }
+    return render(request, 'administration/Reports.html', context)
+
+
+def final_reports_list(request):
+    context = {
+        'active_tab': 'final_reports_list',
+        'final_reports': FinalReport.objects.filter(is_archive=False)
+    }
+    return render(request, 'administration/Final Reports.html', context)
+
+
+def final_report_detail(request, id):
+    report = get_object_or_404(FinalReport, id=id)
+    context = {
+        'active_tab': 'final_report_detail',
+        'report': report,
+    }
+    return render(request, 'administration/Final.html', context)
+
+
+def archive_report_list(request):
+    context = {
+        'active_tab': 'archive_report_list',
+        'archive_reports': FinalReport.objects.filter(is_archive=True)
+    }
+    return render(request, 'administration/Archive.html', context)
+
+
+def archive_report_detail(request, id):
+    report = get_object_or_404(FinalReport, id=id)
+    context = {
+        'active_tab': 'archive_report_detail',
+        'report': report,
+    }
+    return render(request, 'administration/Final Archive.html', context)

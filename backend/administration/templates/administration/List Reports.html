@@ -10,100 +10,36 @@
             <tr>
                 <th>نام</th>
                 <th>نام خانوادگی</th>
-                <th> گزارش 1</th>
-                <th> گزارش 2</th>
-                <th> گزارش 3</th>
-                <th> گزارش 4</th>
-                <th> گزارش 5</th>
-                <th> گزارش 6</th>
-                <th> گزارش 7</th>
-                <th> گزارش 8</th>
+                <th>شماره گزارش</th>
+                <th>فایل</th>
+                <th>نمره</th>
+                <th>نمایش</th>
             </tr>
             <!-- بدنه و ایتم ها -->
+            {% for report in reports %}
             <tr>
-                <td>فاطمه</td>
-                <td>عطایی</td>
+                <td>{{ report.student.firstname }}</td>
+                <td>{{ report.student.lastname }}</td>
+                <td>{{ report.number }}</td>
                 <td>
-                    <a href="./Reports.html"> نمایش </a>
+                    {% if report.file %}
+                    <a href="{{ report.file.url }}">دانلود</a>
+                    {% else %}
+                    <span>-</span>
+                    {% endif %}
                 </td>
                 <td>
-                    <a href="./Reports.html"> نمایش </a>
+                    {% if report.mark %}
+                    <span>{{ report.mark }}</span>
+                    {% else %}
+                    <span>-</span>
+                    {% endif %}
                 </td>
                 <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
+                    <a href="/administrators/reports-list/{{ report.id }}"> نمایش </a>
                 </td>
             </tr>
-            <tr>
-                <td>حنانه</td>
-                <td>بخشی</td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="./Reports.html"> نمایش </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-            </tr>
-            <tr>
-                <td>زهرا</td>
-                <td>شکری</td>
-                <td>
-                    <a href="./Reports.html"> نمایش </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="./Reports.html"> نمایش </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-                <td>
-                    <a href="#"> ارسال نشده </a>
-                </td>
-            </tr>
+            {% endfor %}
         </table>
     </div>
 </section>

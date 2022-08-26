@@ -6,7 +6,7 @@
 <section class="main active-side">
     <div class="form">
         <!-- اطلاعات -->
-        <h5 class="mb-3">نام و نام خوانوادگی</h5>
+        <h5 class="mb-3">{{ report.student.firstname }}{{ report.student.lastname }}</h5>
         <p>
             <p class="small bg-primary text-light p-1 px-3 rounded d-inline">
                 سیستم خضور و غیاب
@@ -16,17 +16,21 @@
         </p>
         <!-- فایل ها -->
         <div class="file-drop-area mb-3">
-            <a href="#">نام و نام خوانوادگی</a>
+            {% if report.file %}
+            <a href="{{ report.file.url }}">{{ report.file }}</a>
+            {% else %}
+            <span>فایلی موجود نیست</span>
+            {% endif %}
         </div>
         <!-- توضیحات -->
         <div class="mb-3">
             <label for="PrpjectDiscripiton" class="form-label">توضیحات اختیاری</label>
-            <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4" placeholder="ندارد" disabled></textarea>
+            <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4" placeholder="ندارد" disabled>{{ report.description }}</textarea>
         </div>
         <!-- نمره -->
         <div class="mb-3">
             <label for="PrpjectDiscripiton" class="form-label">نمره</label>
-            <input type="number" class="form-control w-25" placeholder="0" min="0" max="20" disabled>
+            <input type="number" class="form-control w-25" placeholder="0" min="0" max="20" disabled value="{{ report.mark }}">
         </div>
     </div>
 </section>

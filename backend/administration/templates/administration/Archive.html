@@ -13,30 +13,16 @@
             <th> پروژه </th>
         </tr>
         <!-- بدنه و ایتم ها -->
+        {% for report in archive_reports %}
         <tr>
-            <td>فاطمه</td>
-            <td>عطایی</td>
-            <td>سامانه اداری</td>
+            <td>{{ report.student.firstname }}</td>
+            <td>{{ report.student.lastname }}</td>
+            <td>{{ report.project.title }}</td>
             <td>
-                <a href="./Final Archive.html"> نمایش </a>
+                <a href="/administrators/archive-report-list/{{ report.id }}"> نمایش </a>
             </td>
         </tr>
-        <tr>
-            <td>حنانه</td>
-            <td>بخشی</td>
-            <td>سیسم حضور و غیاب</td>
-            <td>
-                <a href="./Final Archive.html"> نمایش </a>
-            </td>
-        </tr>
-        <tr>
-            <td>زهرا</td>
-            <td>شکری</td>
-            <td>سیستم مدیریتی</td>
-            <td>
-                <a href="./Final Archive.html"> نمایش </a>
-            </td>
-        </tr>
+        {% endfor %}
     </table>
 </section>
 {% endblock %}

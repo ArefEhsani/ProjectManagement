@@ -12,27 +12,15 @@
             <th> گزارش نهایی</th>
         </tr>
         <!-- بدنه و ایتم ها -->
+        {% for report in final_reports %}
         <tr>
-            <td>فاطمه</td>
-            <td>عطایی</td>
+            <td>{{ report.student.firstname }}</td>
+            <td>{{ report.student.lastname }}</td>
             <td>
-                <a href="./Final.html"> نمایش </a>
+                <a href="/administrators/final-reports-list/{{ report.id }}"> نمایش </a>
             </td>
         </tr>
-        <tr>
-            <td>حنانه</td>
-            <td>بخشی</td>
-            <td>
-                <a href="#"> ارسال نشده </a>
-            </td>
-        </tr>
-        <tr>
-            <td>زهرا</td>
-            <td>شکری</td>
-            <td>
-                <a href="./Final.html"> نمایش </a>
-            </td>
-        </tr>
+        {% endfor %}
     </table>
 </section>
 {% endblock %}

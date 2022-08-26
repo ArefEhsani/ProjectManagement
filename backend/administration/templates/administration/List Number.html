@@ -13,30 +13,16 @@
             <th>نمره نهایی</th>
         </tr>
         <!-- بدنه و ایتم ها -->
+        {% for report in reports %}
         <tr>
-            <th>1</th>
-            <td>فاطمه</td>
-            <td>عطایی</td>
+            <th>{{ forloop.counter }}</th>
+            <td>{{ report.student.firstname }}</td>
+            <td>{{ report.student.lastname }}</td>
             <td>
-                15
+                {% if report.mark %}{{ report.mark }}{% else %}-{% endif %}
             </td>
         </tr>
-        <tr>
-            <th>2</th>
-            <td>زهرا</td>
-            <td>قربانی</td>
-            <td>
-                17
-            </td>
-        </tr>
-        <tr>
-            <th>3</th>
-            <td>معصومه</td>
-            <td>شعبانی</td>
-            <td>
-                16
-            </td>
-        </tr>
+        {% endfor %}
     </table>
 </section>
 {% endblock %}
