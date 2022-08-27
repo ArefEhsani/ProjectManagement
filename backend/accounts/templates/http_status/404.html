@@ -1,1 +1,48 @@
-<h1>🖕</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <style>
+        @font-face {
+            font-family: 'IRANSans';
+            src: url("{% static 'Font/IRANSans.ttf' %}");
+        }
+
+        * {
+            font-family: 'IRANSans';
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -250px 0 0 -250px;
+            height: 500px;
+            text-align: center;
+            width: 500px;
+        }
+
+        i {
+            font-style: normal;
+            font-size: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>صفحه پیدا نشد <span>:(</span></h1>
+        <p>صفحه مورد نظر وجود ندارد یا شما دسترسی ندارید.</p>
+
+        <i>404</i>
+    </div>
+
+</body>
+
+</html>
