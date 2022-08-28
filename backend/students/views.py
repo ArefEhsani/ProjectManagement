@@ -89,7 +89,7 @@ def student_final_report(request):
     final_report = FinalReport.objects.filter(student=student).first()
     if request.method == "POST":
         final_project = request.FILES.get("final_project")
-        description = request.FILES.get("description")
+        description = request.POST.get("description")
         obj, created = FinalReport.objects.get_or_create(student=student, defaults={'file': final_project, 'description': description})
         return redirect(reverse("s_final_report"))
     context = {

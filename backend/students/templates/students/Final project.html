@@ -38,13 +38,13 @@
                 {% else %}
                 <span class="fake-btn">انتخاب فایل ها</span>
                 <span class="file-msg">یا کشیدن و رها کردن</span>
-                <input name="report_file" class="file-input" type="file">
+                <input name="final_project" class="file-input" type="file">
                 {% endif %}
             </div>
             <!-- توضیحات -->
             <div class="mb-3">
                 <label for="PrpjectDiscripiton" class="form-label">توضیحات اختیاری</label>
-                <textarea class="form-control" id="PrpjectDiscripiton" cols="5" rows="4" {% if final_report %} disabled {% endif %}>{{ final_report.description }}</textarea>
+                <textarea name="description" class="form-control" id="PrpjectDiscripiton" cols="5" rows="4" {% if final_report %} disabled {% endif %}>{{ final_report.description }}</textarea>
             </div>
             {% if not final_report %}
             <button type="submit" class="btn btn-blue w-100 py-2">ارسال</button>
